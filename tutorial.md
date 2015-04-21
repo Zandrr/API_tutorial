@@ -40,9 +40,10 @@ My aim in this tutorial is to teach people with some technical experience how to
 
 API is an acronym for "application program interface".  This is just fancy talk for how two software components interact. Programmers create "building blocks", an API, to make it easier for other programmers to interact with their database or hardware. This could be how a programmer interacts with the hardware to create a nice graphical user interface.  It could be how Twitter exposes their database to make cool applications!
 
----
+
 #####tl;dr:
 >**An interface for interacting with databases or hardware**
+
 ---
 
 ###What is REST?
@@ -50,9 +51,10 @@ API is an acronym for "application program interface".  This is just fancy talk 
 
 Representational State Transfer.  Yeah, ignore that.  REST is the most popular style of communication for web applications. It allows us to communicate via URI and HTTP (think of URI as a URL, like: http://alexcampbell.co).  That's all we need to know for now, let's jump into code!
 
----
+
 #####tl;dr:
 >**A way to communicate via URI and HTTP**
+
 ---
 
 ###Our Tools
@@ -124,9 +126,11 @@ app.set('port',3000);
 
  Finally we set 'port' to be equal to 3000 for our application.  This means that when we run our server it will be available at http://localhost:3000.  Localhost is just your computer, so for now only you will be able to see it!
 
- ---
+-
 #####tl;dr:
->**Create our app using express, use body parser to allow POST requests, and set the application's port to 3000 so we can access it at http://localhost:3000.**
+>**Create our app using express, use body parser to allow POST requests, and set the application's port to 3000 so we can access 
+it at http://localhost:3000.**
+
 ---
 
 ####Let's create our basic server:
@@ -163,9 +167,10 @@ server.listen(app.get('port'), function(){
 
  We create a variable called server that is an http server using our express *app* that we just created.  Finally we tell our server to *listen* on the port we just created, 3000.  We then tell it to print out "Listening on port <our port>".  Simple enough, right?
 
----
+
 #####tl;dr:
 >**Create a server called 'server' that uses http to create a server using the options we set on our app**
+
 ---
 
 #####Callback function?
@@ -173,9 +178,10 @@ server.listen(app.get('port'), function(){
 
  Although let's back up a second.  Do you see how when we created the server we had this funky function as our second parameter?  This is called a callback function.  All that this is saying is the following:  "Hey server, listen on port 3000 (app.get('port'), and when you're done with that print out that you're listening".  We'll see a few more callback functions when we get into routes, but for now just think of it as the thing that gets done after the first function finishes.
 
----
+
 #####tl;dr:
 >**"Hey server, listen on port 3000 (app.get('port'), and when you're done with that print out that you're listening".**
+
 ---
 
 ####Try it out!
@@ -190,9 +196,10 @@ server.listen(app.get('port'), function(){
  Yes your app sees it, but the computer you're running on doesn't have it installed.  More specifically, the directory you're in (where your app lives) doesn't have it installed.  We could manually install all of the dependencies, but we're developers, we don't like to do things twice.  Let's create a package.json file.  We can think of this file as the instruction manual for our application.  It tells it what it needs to install to run.
 
 
----
+
 #####tl;dr:
 >**The libraries are not installed in your app.  We need to add a package.json file.**
+
 ---
 *package.json*
  ```json
@@ -215,9 +222,10 @@ Now in order to run this file just type ```npm install`` in the directory that t
 
 Woohoo we installed stuff.  Well done.
 
----
+
 #####tl;dr:
 >**Add meta-data and dependencies to the file.  We don't need HTTP because it's included in node.js**
+
 ---
 
 ####Try, try again:
@@ -230,9 +238,10 @@ Quick, go to your browser and put http://localhost:3000 into the url bar.
 
 Cannot GET / ? What the hell man, I thought it would work.  Well it is working, you created a server.  Although the server doesn't know what to do at the URL http://localhost:3000/.  If you go to http://localhost:3000/test you'll get a similar error.  This is where routing comes into play, which is the next part of our tutorial.
 
----
+
 #####tl;dr:
 >**The server is running, but we haven't written any routes yet.**
+
 ---
 
 ###Let's create some routes:
@@ -281,9 +290,10 @@ Although it's a bit more complex than that.  We see that callback thing again he
 
 If you haven't already, go to http://localhost:3000/ and bask in your glory.
 
----
+
 #####tl;dr:
 >**Add the root route ('/') and when someone accesses that URL send back a string.**
+
 ---
 
 
